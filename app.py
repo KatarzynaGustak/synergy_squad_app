@@ -79,7 +79,7 @@ same_cluster_df = all_df[all_df["Cluster"] == predicted_cluster_id]
 
 total_people = len(all_df)  # pełna liczba osób w grupie
 cluster_people = len(same_cluster_df)  # liczba osób w danym klastrze
-percentage = (cluster_people / total_people) * 100  # Oblicz procent
+percentage = int((cluster_people / total_people) * 100)   # Oblicz procent i zaokrąglij do liczby całkowitej
 
 # Wyświetlenie kolumn
 col1, col2, col3 = st.columns(3)
