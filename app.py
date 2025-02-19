@@ -91,11 +91,11 @@ with col2:
     st.metric("Łączna liczba osób ankietowanych", total_people)
 
 with col3:
-    st.metric("Procentowy udział Twojej grupy", f"{percentage:.2f}%")
+    st.metric("Procentowy udział Twojej grupy", f"{percentage}%")
 
 
 #wizualizacje
-st.header("Osoby z grupy")
+st.header("Krótka charakterystyka osób z grupy")
 fig = px.histogram(same_cluster_df.sort_values("age"), x="age",color="age" )
 fig.update_layout(
     title="Rozkład wieku w grupie",
