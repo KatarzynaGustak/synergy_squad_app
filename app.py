@@ -75,7 +75,23 @@ predicted_cluster_data = cluster_names_and_descriptions[predicted_cluster_id]
 st.header(f"Najbliżej Ci do grupy: {predicted_cluster_data['name']}")
 st.markdown(predicted_cluster_data['description'])
 same_cluster_df = all_df[all_df["Cluster"] == predicted_cluster_id]
-st.metric("Liczba twoich znajomych", len(same_cluster_df))
+#st.metric("Liczba twoich znajomych", len(same_cluster_df))
+
+total_people = len(all_df)  # pełna liczba osób w grupie
+cluster_people = len(same_cluster_df)  # liczba osób w danym klastrze
+percentage = (cluster_people / total_people) * 100  # Oblicz procent
+
+# Wyświetlenie kolumn
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric("Liczba osób w Twojej grupie", cluster_people)
+
+with col2:
+    st.metric("Łączna liczba osób", total_people)
+
+with col3:
+    st.metric("Znajdujecie się w", f"{percentage:.2f}% ankietowanych osób")
 
 
 #wizualizacje
