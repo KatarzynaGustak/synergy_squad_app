@@ -88,10 +88,10 @@ with col1:
     st.metric("Liczba osób w Twojej grupie", cluster_people)
 
 with col2:
-    st.metric("Łączna liczba osób", total_people)
+    st.metric("Łączna liczba osób ankietowanych", total_people)
 
 with col3:
-    st.metric("Znajdujecie się w", f"{percentage:.2f}%", "ankietowanych osób")
+    st.metric("Procentowy udział Twojej grupy", f"{percentage:.2f}%")
 
 
 #wizualizacje
